@@ -31,7 +31,7 @@ public class IntegrationTest {
     @Test
     public void prints_fizzbuzz_from_ten_to_sixteen() {
         Main.main("10", "16");
-        assertEquals("Buzz 11 Fizz 13 14 FizzBuzz 16\n", stdout.toString());
+        assertEquals("Buzz 11 Fizz 13 14 FizzBuzz 16" + System.getProperty("line.separator"), stdout.toString());
         assertEquals("", stderr.toString());
     }
 
@@ -39,13 +39,13 @@ public class IntegrationTest {
     public void prints_error_message_for_wrong_number_of_arguments() {
         Main.main("10");
         assertEquals("", stdout.toString());
-        assertEquals("wrong arguments, try: <number> <number>\n", stderr.toString());
+        assertEquals("wrong arguments, try: <number> <number>" + System.getProperty("line.separator"), stderr.toString());
     }
 
     @Test
     public void prints_error_message_for_wrong_arguments() {
         Main.main("10", "buzz");
         assertEquals("", stdout.toString());
-        assertEquals("wrong arguments, try: <number> <number>\n", stderr.toString());
+        assertEquals("wrong arguments, try: <number> <number>" + System.getProperty("line.separator"), stderr.toString());
     }
 }
