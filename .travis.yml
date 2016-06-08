@@ -3,3 +3,6 @@ jdk:
   - oraclejdk8
 script:
   - gradle check
+
+# skip gradle assemble (skip the install step)
+install: true
