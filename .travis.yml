@@ -2,9 +2,9 @@ language: java
 jdk:
   - oraclejdk8
 script:
-  - gradle check
+  - ./gradlew check
 before_script:
-  - gradle -version
+  - ./gradlew -version
 
 # skip gradle assemble (skip the install step)
 install: true
