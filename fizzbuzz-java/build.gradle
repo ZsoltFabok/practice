@@ -2,6 +2,8 @@ apply plugin: 'java'
 
 def mainClass = "fizzbuzz.Main"
 def app = "fizz_buzz"
+def build_jar = project.name + ".jar"
+def app_jar = app + ".jar"
 
 repositories {
     mavenCentral()
@@ -15,20 +17,14 @@ jar {
     manifest {
         attributes 'Main-Class': mainClass
     }
+}
 
-    // build the jar according to the requirement
-    baseName = app
-    destinationDir = new File(".")
-
-    // This works as well
-    // doLast {
-    //     copy {
-    //         from('build/libs') {
-    //             include('fizzbuzz-java.jar')
-    //         }
-    //         into('.')
-
-    //         rename('fizzbuzz-java.jar', app + '.jar')
-    //     }      
-    // }
+task dist(dependsOn: jar) << {
+    copy {
+        from('build/libs') {
+            include(build_jar)
+        }
+        into('.')
+        rename(build_jar, app_jar)
+    }
 }
