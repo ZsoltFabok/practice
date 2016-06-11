@@ -1,1 +1,2 @@
-include 'fizzbuzz-java', 'roman-numerals-java'
+include 'fizzbuzz-java', 'roman-numerals-java', 'text-munger-java'
+

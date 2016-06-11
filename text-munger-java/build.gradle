@@ -1,0 +1,30 @@
+apply plugin: 'java'
+
+def mainClass = "TextMunger"
+def app = "text_munger"
+def build_jar = project.name + ".jar"
+def app_jar = app + ".jar"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+}
+
+jar {
+    manifest {
+        attributes("Main-Class": mainClass)
+    }
+}
+
+task dist(dependsOn: jar) << {
+    copy {
+        from('build/libs') {
+            include(build_jar)
+        }
+        into('.')
+        rename(build_jar, app_jar)
+    }
+}
