@@ -3,7 +3,6 @@ plugins {
   id "java"
 }
 
-
 def mainClass = "fizzbuzz.Main"
 def app = "fizz_buzz"
 def build_jar = project.name + ".jar"
