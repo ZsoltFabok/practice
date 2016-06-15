@@ -46,7 +46,7 @@ sonarqube {
         property "sonar.host.url", "http://sonar-ezsofab.rhcloud.com/"
         property "sonar.java.source", "1.8"
         property "sonar.sources", "src/main/java"
-        property "sonar.java.tests", "src/test/java"
+        property "sonar.tests", "src/test/java"
         property "sonar.scm.provider", "git"
         property "sonar.projectKey", get_user_name() + "_" + project.name
         property "sonar.projectName", get_user_name() + "_" + project.name
