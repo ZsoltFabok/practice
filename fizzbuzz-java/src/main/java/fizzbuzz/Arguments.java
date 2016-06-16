@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Arguments {
-    public List<Integer> parse(String... args) throws IllegalArgumentException {
+    public List<Integer> parse(String... args) {
         if (args.length == 2) {
             try {
-                List<Integer> numbers = new ArrayList<Integer>();
+                List<Integer> numbers = new ArrayList<>();
                 for (String arg : args) {
                     numbers.add(Integer.parseInt(arg));
                 }

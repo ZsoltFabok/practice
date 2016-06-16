@@ -8,7 +8,7 @@ public class FizzBuzz {
      * would be way easier with java 8 and <code>.stream().map()</code>
      */
     public List<String> go(int start, int end) {
-        List<String> list = new ArrayList<String>();
+        List<String> list = new ArrayList<>();
         for (int number = start; number <= end; number++) {
             list.add(convert(number));
         }

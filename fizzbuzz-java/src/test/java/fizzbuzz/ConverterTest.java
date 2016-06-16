@@ -12,6 +12,6 @@ public class ConverterTest {
      */
     @Test
     public void list_to_string_works_fine() {
-        assertEquals("1 2 3", new Converter().list_to_string(Arrays.asList(1, 2, 3)));
+        assertEquals("1 2 3", new Converter().listToString(Arrays.asList(1, 2, 3)));
     }
 }

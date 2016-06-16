@@ -22,11 +22,11 @@ public class Main {
 
     void run(String... args) {
         try {
-            List<Integer> arguments = this.arguments.parse(args);
-            List<String> result = this.fizzbuzz.go(arguments.get(0), arguments.get(1));
-            System.out.println(this.converter.list_to_string(result));
+            List<Integer> commandArgs = this.arguments.parse(args);
+            List<String> result = this.fizzbuzz.go(commandArgs.get(0), commandArgs.get(1));
+            System.out.println(this.converter.listToString(result)); // NOSONAR
         } catch (IllegalArgumentException e) {
-            System.err.println("wrong arguments, try: <number> <number>");
+            System.err.println("wrong arguments, try: <number> <number>"); // NOSONAR
         }
     }
 }
