@@ -1,9 +1,11 @@
-apply plugin: 'java'
+plugins {
+    id "java"
+}
 
-def mainClass = "TextMunger"
-def app = "text_munger"
+def main_class = "TextMunger"
+def app_name = "text_munger"
 def build_jar = project.name + ".jar"
-def app_jar = app + ".jar"
+def app_jar = app_name + ".jar"
 
 repositories {
     mavenCentral()
@@ -15,7 +17,7 @@ dependencies {
 
 jar {
     manifest {
-        attributes("Main-Class": mainClass)
+        attributes 'Main-Class': main_class
     }
 }
 
