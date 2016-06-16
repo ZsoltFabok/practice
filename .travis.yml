@@ -2,7 +2,7 @@ language: java
 jdk:
   - oraclejdk8
 script:
-  - ./gradlew sonarqube
+  - ./gradlew test
 before_script:
   - ./gradlew -version
 
