@@ -1,15 +1,20 @@
-subprojects {
-    apply plugin: 'org.sonarqube'
-    
-    def user_name = "ezsofab"
+project.ext {
+    java_projects = subprojects.findAll{
+        it.name.endsWith("-java")
+    }
+}
 
+configure(project.java_projects) {
+    apply plugin: 'org.sonarqube'
+
+    def user_name = "ezsofab"
     def get_user_name = {
         String un = user_name
             if (System.getenv("TRAVIS") != null) {
                 un = "ci-" + user_name
             }
         return un
-    }    
+    }
 
     sonarqube {
         properties {
@@ -18,13 +23,13 @@ subprojects {
             property "sonar.sources", "src/main/java"
             property "sonar.java.tests", "src/test/java"
             property "sonar.scm.provider", "git"
-            property "sonar.projectKey", get_user_name() + "_" + project.name
-            property "sonar.projectName", get_user_name() + "_" + project.name
+            property "sonar.projectKey", get_user_name() + "_practice"
+            property "sonar.projectName", get_user_name() + "_practice"
         }
     }
 }
 
-// since subprojects does not support the plugins {} entry so I have to use this below :-(
+// since subprojects does not support the plugins {} entry so I have to use this :-(
 buildscript {
     repositories {
         maven {
