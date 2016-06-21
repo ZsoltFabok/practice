@@ -2,10 +2,13 @@ plugins {
     id "java"
 }
 
+project.ext {
+    app_name = "roman_numerals"
+    build_jar = project.name + ".jar"
+    app_jar = app_name + ".jar"
+}
+
 def main_class = "RomanNumerals"
-def app_name = "roman_numerals"
-def build_jar = project.name + ".jar"
-def app_jar = app_name + ".jar"
 
 repositories {
     mavenCentral()
@@ -18,15 +21,5 @@ dependencies {
 jar {
     manifest {
         attributes 'Main-Class': main_class
-    }
-}
-
-task dist(dependsOn: jar) << {
-    copy {
-        from('build/libs') {
-            include(build_jar)
-        }
-        into('.')
-        rename(build_jar, app_jar)
     }
 }

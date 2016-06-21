@@ -6,6 +6,7 @@ project.ext {
 
 configure(project.java_projects) {
     apply plugin: 'org.sonarqube'
+    apply plugin: 'java'
 
     def user_name = "ezsofab"
     def get_user_name = {
@@ -25,6 +26,16 @@ configure(project.java_projects) {
             property "sonar.scm.provider", "git"
             property "sonar.projectKey", get_user_name() + "_practice"
             property "sonar.projectName", get_user_name() + "_practice"
+        }
+    }
+
+    task dist(dependsOn: jar) << {
+        copy {
+            from('build/libs') {
+                include (build_jar)
+            }
+            into('.')
+            rename(build_jar, app_jar)
         }
     }
 }
