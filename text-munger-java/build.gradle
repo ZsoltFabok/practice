@@ -1,7 +1,3 @@
-plugins {
-    id "java"
-}
-
 project.ext {
     app_name = "text_munger"
     build_jar = project.name + ".jar"
@@ -9,10 +5,6 @@ project.ext {
 }
 
 def main_class = "TextMunger"
-
-repositories {
-    mavenCentral()
-}
 
 dependencies {
     testCompile 'junit:junit:4.12'

@@ -8,6 +8,10 @@ configure(project.java_projects) {
     apply plugin: 'org.sonarqube'
     apply plugin: 'java'
 
+    repositories {
+        mavenCentral()
+    }
+
     def user_name = "ezsofab"
     def get_user_name = {
         String un = user_name
