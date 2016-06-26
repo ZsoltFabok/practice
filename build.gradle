@@ -30,6 +30,9 @@ configure(project.java_projects) {
             property "sonar.scm.provider", "git"
             property "sonar.projectKey", get_user_name() + "_practice"
             property "sonar.projectName", get_user_name() + "_practice"
+            property "sonar.github.oauth", "62a4509a218f34b61b116f860a6622b1d4997dad"
+            property "sonar.github.repository", "ZsoltFabok/practice"
+            property "sonar.github.pullRequest", System.getenv("TRAVIS_PULL_REQUEST")
         }
     }
 
