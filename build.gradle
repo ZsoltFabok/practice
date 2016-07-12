@@ -23,7 +23,7 @@ configure(project.java_projects) {
 
     sonarqube {
         properties {
-            property "sonar.host.url", "http://sonar-ezsofab.rhcloud.com/"
+            property "sonar.host.url", "http://ec2-54-191-121-137.us-west-2.compute.amazonaws.com:9000/"
             property "sonar.java.source", "1.8"
             property "sonar.sources", "src/main/java"
             property "sonar.java.tests", "src/test/java"
