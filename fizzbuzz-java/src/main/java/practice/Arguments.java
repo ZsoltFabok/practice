@@ -1,4 +1,4 @@
-package fizzbuzz;
+package practice;
 
 import java.util.ArrayList;
 import java.util.List;

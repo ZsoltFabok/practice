@@ -1,3 +1,5 @@
+package practice;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,25 +14,29 @@ public class IntegrationTest {
     private ByteArrayOutputStream stderr = new ByteArrayOutputStream();
 
     @Before
-    public void setUp() {
+    public void setup() {
         System.setOut(new PrintStream(stdout));
         System.setErr(new PrintStream(stderr));
     }
 
     @After
-    public void tearDown() {
+    public void teardown() {
         System.setOut(null);
         System.setErr(null);
     }
 
-    /**
-     * this name is better than shouldReturnBlahBlah because should is not necessary because we are in a test case
-     * plus there is the <code>@Test</code> annotation and one can read a sentence better than a [camel cased] word.
-     */
+
     @Test
-    public void prints_ix_for_nine() {
-        RomanNumerals.main("2");
-        assertEquals("II\n", stdout.toString());
+    public void prints_a_munged_sentence() {
+        TextMunger.main("10 abc de! who");
+        assertEquals("10 abc de! who" + System.getProperty("line.separator"), stdout.toString());
         assertEquals("", stderr.toString());
+    }
+
+    @Test
+    public void prints_error_message_for_wrong_number_of_arguments() {
+        TextMunger.main("something", "other");
+        assertEquals("", stdout.toString());
+        assertEquals("Wrong arguments, try: \"input string\"" + System.getProperty("line.separator"), stderr.toString());
     }
 }

@@ -1,3 +1,5 @@
+package practice;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -8,17 +10,19 @@ import java.util.regex.Pattern;
 class TextMunger {
     private static Pattern pattern = Pattern.compile("([a-zA-z])([a-zA-Z]{2,})([a-zA-z])");
 
+    private TextMunger() {}
+
     public static void main(String... args) {
         if (args.length == 1) {
-            System.out.println(munge(args[0]));
+            System.out.println(munge(args[0])); // NOSONAR
         } else {
-            System.err.println("Wrong arguments, try: \"input string\"");
+            System.err.println("Wrong arguments, try: \"input string\""); // NOSONAR
         }
     }
 
     static String munge(String arg) {
         Matcher m = pattern.matcher(arg);
-        StringBuffer s = new StringBuffer();
+        StringBuffer s = new StringBuffer(); // NOSONAR
         while (m.find()) {
             m.appendReplacement(s, m.group(1) + shuffle(m.group(2)) + m.group(3));
         }

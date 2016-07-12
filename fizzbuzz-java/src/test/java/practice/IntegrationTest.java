@@ -1,4 +1,4 @@
-package fizzbuzz;
+package practice;
 
 import org.junit.After;
 import org.junit.Before;

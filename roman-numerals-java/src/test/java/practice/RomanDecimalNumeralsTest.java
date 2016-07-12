@@ -1,3 +1,5 @@
+package practice;
+
 import org.junit.Test;
 
 import java.io.IOException;
@@ -12,7 +14,7 @@ public class RomanDecimalNumeralsTest {
     @Test
     public void all_variations() throws IOException {
         Properties numbers = new Properties();
-        numbers.load(getClass().getResourceAsStream("numbers.properties"));
+        numbers.load(getClass().getResourceAsStream("/numbers.properties"));
 
         numbers.entrySet().stream().forEach((entry) -> {
             String expectedRoman = (String) entry.getValue();
