@@ -23,13 +23,17 @@ configure(project.java_projects) {
 
     sonarqube {
         properties {
-            property "sonar.host.url", "http://sonar-ezsofab.rhcloud.com/"
+            property "sonar.host.url", "http://ec2-54-191-121-137.us-west-2.compute.amazonaws.com:9000/"
             property "sonar.java.source", "1.8"
             property "sonar.sources", "src/main/java"
             property "sonar.java.tests", "src/test/java"
             property "sonar.scm.provider", "git"
             property "sonar.projectKey", get_user_name() + "_practice"
             property "sonar.projectName", get_user_name() + "_practice"
+            // property "sonar.github.oauth", "62a4509a218f34b61b116f860a6622b1d4997dad"
+            // property "sonar.github.repository", "ZsoltFabok/practice"
+            // property "sonar.github.pullRequest", System.getenv("TRAVIS_PULL_REQUEST")
+            // property "sonar.analysis.mode", "issues"
         }
     }
 
