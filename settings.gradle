@@ -1,2 +1,2 @@
-include 'fizzbuzz-java', 'roman-numerals-java', 'text-munger-java'
+include 'fizzbuzz-java', 'roman-numerals-java', 'text-munger-java', 'find-max-java'
 
